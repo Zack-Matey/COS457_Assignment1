@@ -1,0 +1,14 @@
+name|family|zipcode|memberid|memberage#
+Eric|Rock|04101|0021|12#
+Zane|Munson|04101|0309|19#
+Wei-Yin|Ko|04103|0711|09#
+Richard|Herzog|04101|0017|14#
+Sara|Tafti|04101|0147|22#
+Brian|Schrodi|04101|0910|37#
+Dan|Zimmerman|04105|0534|33#
+Eric|LaRose|04105|0376|46#
+Daniel|Bebis|04102|0029|51#
+Lanie|Zimmerman|04105|0535|51#
+David|Jian|04104|0902|53#
+Sharon|Mahanke|04101|0114|55#
+Robert|Wall|04102|0009|67#
