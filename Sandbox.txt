@@ -1,0 +1,12 @@
+name;firstauthor;isbn;publisher;borrowed;memberid##
+Deep Learning with PyTorch;Eli Stevens;1617295264;Maning;0;null##
+Advanced Elasticsearch 7.0;Wai Tak Wong;1789957753;Packt;1;0910##
+Database Systems;Hector Garcia-Molina;0131873253;Pearson;1;0241##
+Practical Text Analytics;Steven Struhl;749474017;Kogan Page;1;0910##
+Machine Learning: Master Machine Learning Fundamentals For Beginners;MG Martin;0192324759;Mg Martin;0;null##
+Practical Machine Learning for Computer Vision;Valliappa Lakshmanan;1098102363;Oreilly;null;null##
+Artificial Intelligence for Business Leaders:;Ajit K Jha;2291874757;MNPublisher;1;0114##
+Machine Learning: Master Machine Learning Fundamentals For Beginners;MG Martin;0192324759;Mg Martin;0;null##
+Database Systems;Hector Garcia-Molina;0131873253;Pearson;1;0241##
+Machine Learning: Master Machine Learning Fundamentals For Beginners;MG Martin;0192324759;Mg Martin;0;null##
+Machine Learning: Master Machine Learning Fundamentals For Beginners;MG Martin;0192324759;Mg Martin;0;null##
