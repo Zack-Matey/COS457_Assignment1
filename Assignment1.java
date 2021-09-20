@@ -7,6 +7,12 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Scanner;
 
+/*
+*   COS 457/558 Database Systems
+*   Assignment 1
+*   Zack Matey
+*/
+
 public class Assignment1 {
 
     /* ################### GLOBAL FINAL VARIABLES ################### */
@@ -14,6 +20,9 @@ public class Assignment1 {
     final static String EOL_PATTERN = "##|#";
     final static String DELIM_PATTERN = "\\||;|#";
     final static String DELETE_MEMBER_ATTRIBUTE = "memberid";
+    final static String MEMBER_AGE_ATTRIBUTE = "memberage";
+    final static String MEMBER_FAMILY_ATTRIBUTE = "family";
+    final static String BOOK_PUBLISHER_ATTRIBUTE = "publisher";
     final static String BOOK_FILE_NAME = "Books.txt";
     final static String MEMBER_FILE_NAME = "Members.txt";
 
@@ -53,21 +62,21 @@ public class Assignment1 {
     // difference is a constant factor c = 2, such that execution time = O(cn) = O(2n)
 
     public static void print_publishers() throws FileNotFoundException {
-        String[] publishers = getAttributesUnique(BOOK_FILE_NAME, "publisher");
+        String[] publishers = getAttributesUnique(BOOK_FILE_NAME, BOOK_PUBLISHER_ATTRIBUTE);
         for (int i = 0; i < publishers.length; i++) {
             System.out.println(publishers[i]);
         }
     }
 
     public static void print_member_name_family() throws FileNotFoundException {
-        String[] family = getAttributesUnique(MEMBER_FILE_NAME, "family");
+        String[] family = getAttributesUnique(MEMBER_FILE_NAME, MEMBER_FAMILY_ATTRIBUTE);
         for (int i = 0; i < family.length; i++) {
             System.out.println(family[i]);
         }
     }
 
     public static double avg_age() throws FileNotFoundException {
-        String[] ages = getAttributes(MEMBER_FILE_NAME, "memberage");
+        String[] ages = getAttributes(MEMBER_FILE_NAME, MEMBER_AGE_ATTRIBUTE);
         double total = 0;
         for (int i = 0; i < ages.length; i++) {
             total += Double.parseDouble(ages[i]);
@@ -75,10 +84,9 @@ public class Assignment1 {
         return total / ages.length;
     }
 
+    // note - this only functions for Members.txt, as the method signature
+    // restricts functionality somewhat - only Members.txt has memberid
     public static void delete_member(String filename, int memberid) throws IOException {
-        // note - this only functions for Members.txt, as the method signature
-        // restricts functionality somewhat - only Members.txt has memberid
-
         File database = new File(filename);
         File tempFile = File.createTempFile(filename, ".txt", new File(System.getProperty("user.dir")));
         FileWriter tempFileWrite = new FileWriter(tempFile);
@@ -95,7 +103,7 @@ public class Assignment1 {
         while (s.hasNext()) {
             currentEntity = s.next();
             if (Integer.parseInt(parseLine(currentEntity, attributePos)) != memberid)
-                tempFileWrite.append(currentEntity + "\n");
+                tempFileWrite.append(currentEntity+"##");
             tempFileWrite.flush();
         }
 
@@ -153,7 +161,7 @@ public class Assignment1 {
         return i;
     }
 
-    // returns a specific attribute from an entity, given an entity and attribute index
+    // returns a specific attribute from an entity, given an entity and an attribute index
     public static String parseLine(String entity, int attributeIndex) {
         String entityAttributes[] = entity.split(DELIM_PATTERN);
         return entityAttributes[attributeIndex];
